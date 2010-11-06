@@ -1,2 +1,2 @@
-William C Morris
+William C. Morris
 <d4rkh4re@gmail.com>
