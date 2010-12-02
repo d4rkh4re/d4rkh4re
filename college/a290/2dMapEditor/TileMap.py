@@ -44,9 +44,6 @@ class TileMap(object):
         else:
             return False
 
-    """
-    TODO:
-    """
     def parse_from_xml(self, xml_tilemap):
         """
         Create TileMap object from p_xml_tilemap.
