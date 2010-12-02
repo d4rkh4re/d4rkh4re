@@ -52,6 +52,7 @@ class TileMap(object):
         Create TileMap object from p_xml_tilemap.
         p_xml_tilemap: File path of xml file to read from.
         """
+        
         f = open(xml_tilemap, "r")
 
         xml_string = f.read()
@@ -61,21 +62,23 @@ class TileMap(object):
         tilemap_parameters = dom.getElementsByTagName("tilemap")
 
         for t in tilemap_parameters:
-            self.layers = t.getElementsByTagname("layers")[0]
-            self.height = t.getElementsByTagname("height")[0]
-            self.width = t.getElementsByTagname("width")[0]
+            self.layers = t.getAttribute("layers")
+            self.height = t.getAttribute("height")
+            self.width = t.getAttribute("width")
 
         tilemap_layers = dom.getElementsByTagName("layer")
 
         for layer in tilemap_layers:
-            """
-            http://docs.python.org/release/3.0.1/library/xml.dom.minidom.html
-            http://docs.python.org/dev/library/xml.dom.html
-            """
-        print(tilemap)
-        
-        return False
-    
+            self.texture_map.append( [int(c) for c in layer.childNodes[0].data if c != ' '])
+            
+        f.close()
+            
+        """
+        Documentation:
+        http://docs.python.org/release/3.0.1/library/xml.dom.minidom.html
+        http://docs.python.org/dev/library/xml.dom.html
+        """
+
     def parse_to_xml(self, xml_tilemap):
         """
         Write self to p_xml_tilemap.
@@ -105,7 +108,7 @@ class TileMap(object):
 
         """ Write xml  to p_xml_tilemap. """
         f = open(xml_tilemap, "w")
-        doc.writexml(f, addindent="\t", newl="\n", encoding="utf-8")
+        doc.writexml(f, encoding="utf-8")
         f.close()
 
     def list_to_str(self, layer):
@@ -113,13 +116,3 @@ class TileMap(object):
         for char in layer:
             result += str(char) + " "
         return result
-    
-    
-t = TileMap(4,4,2,0)
-t.edit_tile(0,5,0,0)
-t.edit_tile(0,5,1,1)
-t.edit_tile(0,5,1,2)
-t.edit_tile(0,5,1,3)
-if not t.edit_tile(1,5,3,3):
-    print("Error")
-print(t.texture_map)
