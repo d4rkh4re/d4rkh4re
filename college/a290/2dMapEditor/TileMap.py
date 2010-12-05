@@ -2,31 +2,25 @@ import xml.dom.minidom
 
 class TileMap(object):
 
-    def __init__(self, xml_tilemap):
-        """
-        Create a TextureMap object from <texturemap> specifications.
-        p_texturemap: Source xml file.
-        """
-        map_data = parse_xml(xml_tilemap)
-
-        self.height = map_data.height
-        self.width = map_data.width
-        self.layers = map_data.layers
-        self.texture_map = map_data.texture_map
-
-    def __init__(self, height, width, layers, texture_id):
+    def __init__(self, height=0, width=0, layers=1, texture_id=0, xml_tilemap=None):
         """
         Create a TextureMap object.
         p_height: Width of TextureMap.
         p_width: Height of TextureMap.
         p_layers: Number of layers in TileMap.
         p_texture_id: Default texture fill for game map.
+        
+        Create a TextureMap object from <texturemap> specifications.
+        p_texturemap: Source xml file.
         """
-        self.height = height
-        self.width = width
-        self.layers = layers
-        self.texture_map = [[texture_id for i in range(height*width)] \
-                            for i in range(layers)]
+        if xml_tilemap == None:
+            self.height = height
+            self.width = width
+            self.layers = layers
+            self.texture_map = [[texture_id for i in range(height*width)] \
+                                for i in range(layers)]
+        else:
+            parse_from_xml(xml_tilemap)
 
     def edit_tile(self, layer, texture_id, x, y):
         """
