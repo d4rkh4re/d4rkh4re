@@ -17,6 +17,7 @@ class TileEditor(Frame):
         Frame.__init__(self)
         
         self.tile_map_editor = TileMapEditor()
+        self.tile_set = TileSet()
         
         self.pack()
         self.create_widgets()
@@ -30,7 +31,7 @@ class TileEditor(Frame):
         self.setup_layer_selection()
         
         # Set up canvas for tile display
-        self.setup_tile_display()
+        self.setup_tilemap_display()
         
         # Add widgets to Tile Editor
         self.pack_widgets()
@@ -39,10 +40,10 @@ class TileEditor(Frame):
         """
         Set up option menu for tile selection by key value.
         """
-        availibe_tiles = list(self.tile_map_editor.get_tileset_keys())
+        availible_tiles = list(self.tile_map_editor.get_tileset_keys())
         self.v = StringVar()
-        self.v.set(availibe_tiles[0])
-        self.change_selected_tile = OptionMenu(self, self.v, *availibe_tiles)
+        self.v.set(availible_tiles[0])
+        self.change_selected_tile = OptionMenu(self, self.v, *availible_tiles)
         
     def setup_layer_selection(self):
         """
@@ -53,11 +54,15 @@ class TileEditor(Frame):
         self.v.set(editable_layers[0])
         self.change_layer = OptionMenu(self, self.v, *editable_layers)
 
-    def setup_tile_display(self):
-        self.display_tilemap = Canvas(self, height=100, width=300, bg="red")
+    def setup_tilemap_display(self):
+        self.tilemap_display = Canvas(self, height=100, width=300, bg="red")
+        
+        # Get all tiles from self.tile_set
+        self.photoimage_tileset = PhotoImage(file=self.tile_set.get_tileset_location())
+        self.tilemap_display.create_image(0, 0, anchor=NW, image=self.photoimage_tileset)
         
     def pack_widgets(self):
-        self.display_tilemap.pack({"side": "left"})
+        self.tilemap_display.pack({"side": "left"})
         self.change_selected_tile.pack({"side": "left"})
         self.change_layer.pack({"side": "right"})
         
@@ -65,7 +70,7 @@ class TileEditor(Frame):
 def main():
     root = Tk()
     app = TileEditor(master=root)
-    app.master.minsize(1000, 500)
+    app.master.minsize(400, 500)
     app.mainloop()
 
 if __name__ == '__main__':
