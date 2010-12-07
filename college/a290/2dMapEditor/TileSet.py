@@ -18,7 +18,14 @@ class TileSet(object):
             self.tile_resources = dict()
             self.tileset_location = tileset_location
 
-        
+    def add_tile(self, tile_key, tile_value):
+        self.tile_resources[tile_key] = tile_value
+
+    def set_tile_resources(self, photoimage):
+        self.photoimage_tileset = PhotoImage(file=self.get_tileset_location())
+
+        self.add_tile(0, self.subimage(self.photoimage_tileset, 32, 0, 63, 32))
+        self.add_tile(1, self.subimage(self.photoimage_tileset, 0, 0, 32, 32))
         
     def get_tile(self, tile_id):
         return self.tile_resources.get(tile_id)
@@ -28,3 +35,8 @@ class TileSet(object):
 
     def get_tileset_location(self):
         return self.tileset_location
+
+    def subimage(self, src, l, t, r, b):
+        dst = PhotoImage()
+        dst.tk.call(dst, 'copy', src, '-from', l, t, r, b, '-to', 0, 0)
+        return dst
