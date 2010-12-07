@@ -14,8 +14,6 @@ class TileMapEditor(object):
         """
         self.selected_layer = 0
         self.selected_texture_id = 0
-        self.tile_map = TileMap()
-        self.tile_set = TileSet()
         
     def get_layers(self):
         return self.tile_map.layers
@@ -71,14 +69,13 @@ class TileMapEditor(object):
         zero.
         """
         self.selected_layer = 0
-        self.tile_map = TileMap(xml_tilemap)
+        self.tile_map = TileMap(xml_tilemap=xml_tilemap)
 
     def save_tilemap(self, xml_tilemap):
         """
         Writes xml representation of tile_map to @xml_tilemap.
         """
         self.tile_map.parse_to_xml(xml_tilemap)
-        self.tile_map = TileMap()
 
     def close_tilemap(self):
         """
@@ -86,13 +83,13 @@ class TileMapEditor(object):
         """
         self.tile_map = None
 
-    def open_tileset(self, png_height, png_width, png_tileset, tile_height, tile_width):
+    def open_tileset(self, tileset_source, width, height, tile_width=32, tile_height=32):
         """
         Creates a TileSet object from @png_tileset and sets selected_texture_id
         to Zero.
         """
         self.selected_texture_id = 0
-        self.tile_set = TileSet(png_height, png_width, png_tileset, tile_height, tile_width)
+        self.tile_set = Tileset(tileset_source, width, height, tile_width, tile_height)
 
     def close_tileset(self):
         """
@@ -100,9 +97,9 @@ class TileMapEditor(object):
         """
         self.tile_set = TileSet()
 
-    def edit_tile(self, layer, texture_id, x, y):
+    def edit_tile(self, x, y):
         """
-        Edits replaces current texutre id at @layer, @x, @y with @texture_id.
+        Edits replaces current texutre id at layer, x, y with selected_texture_id.
         """
-        self.tile_map.edit_tile(self.selected_layer, self.selected_texture_id, x, y)
+        self.tile_map.edit_tile(self.get_selected_layer(), self.get_selected_texture_id(), x, y)
         

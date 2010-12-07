@@ -1,17 +1,24 @@
+###############################################################################
+# 2dTileEditor.py
+# William C. Morris
+# <d4rkh4re@gmail.com>
+###############################################################################
+
 import xml.dom.minidom
 
 class TileMap(object):
-
     def __init__(self, height=0, width=0, layers=1, texture_id=0, xml_tilemap=None):
         """
-        Create a TextureMap object.
-        p_height: Width of TextureMap.
-        p_width: Height of TextureMap.
-        p_layers: Number of layers in TileMap.
-        p_texture_id: Default texture fill for game map.
-        
-        Create a TextureMap object from <texturemap> specifications.
-        p_texturemap: Source xml file.
+        Create a Tilemap object. If xml_tilemap is defined all other
+        parameters are ignored and the object is created from source xml file.
+        If xml_tilemap=None then all other parameters must exist in order for
+        a Tilemap object to be created.
+
+        height: Height in tiles of Tilemap
+        width:  Width in tiles of Tilemap.
+        layers: Number of layers in TileMap.
+        texture_id: Default texture fill for game map.
+        texturemap: Source xml file.
         """
         if xml_tilemap == None:
             self.height = height
@@ -20,7 +27,15 @@ class TileMap(object):
             self.texture_map = [[texture_id for i in range(height*width)] \
                                 for i in range(layers)]
         else:
-            parse_from_xml(xml_tilemap)
+            self.texture_map = list()
+            self.parse_from_xml(xml_tilemap)
+
+    def get_tile(self, layer, x, y):
+        if x < self.width and x >= 0 and y < self.height and y >= 0 \
+           and layer < self.layers and layer >= 0:
+            return self.texture_map[layer][x*self.width + y]
+        else:
+            return False
 
     def edit_tile(self, layer, texture_id, x, y):
         """
@@ -53,9 +68,9 @@ class TileMap(object):
         tilemap_parameters = dom.getElementsByTagName("tilemap")
 
         for t in tilemap_parameters:
-            self.layers = t.getAttribute("layers")
-            self.height = t.getAttribute("height")
-            self.width = t.getAttribute("width")
+            self.layers = int(t.getAttribute("layers"))
+            self.height = int(t.getAttribute("height"))
+            self.width = int(t.getAttribute("width"))
 
         tilemap_layers = dom.getElementsByTagName("layer")
 
