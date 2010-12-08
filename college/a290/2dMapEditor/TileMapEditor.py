@@ -1,5 +1,5 @@
-from TileMap import *
-from TileSet import *
+from Tilemap import *
+from Tileset import *
 
 class TileMapEditor(object):
     """
@@ -69,7 +69,7 @@ class TileMapEditor(object):
         zero.
         """
         self.selected_layer = 0
-        self.tile_map = TileMap(xml_tilemap=xml_tilemap)
+        self.tile_map = Tilemap(xml_tilemap=xml_tilemap)
 
     def save_tilemap(self, xml_tilemap):
         """

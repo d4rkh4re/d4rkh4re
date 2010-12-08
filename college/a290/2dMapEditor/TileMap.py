@@ -6,7 +6,7 @@
 
 import xml.dom.minidom
 
-class TileMap(object):
+class Tilemap(object):
     def __init__(self, height=0, width=0, layers=1, texture_id=0, xml_tilemap=None):
         """
         Create a Tilemap object. If xml_tilemap is defined all other
