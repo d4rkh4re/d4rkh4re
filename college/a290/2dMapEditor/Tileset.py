@@ -1,7 +1,7 @@
 ###############################################################################
 # Tileset.py
-# William C. Morris
-# <d4rkh4re@gmail.com>
+# Jonathan M. Stout
+# <jonstout@indiana.edu>
 ###############################################################################
 
 from tkinter import PhotoImage

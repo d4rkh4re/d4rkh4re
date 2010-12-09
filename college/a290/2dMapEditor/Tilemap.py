@@ -1,7 +1,7 @@
 ###############################################################################
 # Tilemap.py
-# William C. Morris
-# <d4rkh4re@gmail.com>
+# Jonathan M. Stout
+# <jonstout@indiana.edu>
 ###############################################################################
 
 import xml.dom.minidom
@@ -131,8 +131,10 @@ class Tilemap(object):
         if tilemap_xml == None:
             f = open(self.xml_tilemap, "w")
         else:
-            f = open(tilemap_xml, "w")
+            self.xml_tilemap = tilemap_xml
+            f = open(self.xml_tilemap, "w")
         doc.writexml(f, encoding="utf-8")
+        print(self.xml_tilemap)
 
         f.close()
 

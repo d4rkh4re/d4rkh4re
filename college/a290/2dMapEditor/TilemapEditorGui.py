@@ -1,12 +1,12 @@
 ###############################################################################
 # TilemapEditorGui.py
-# William C. Morris
-# <d4rkh4re@gmail.com>
+# Jonathan M. Stout
+# <jonstout@indiana.edu>
 ###############################################################################
 
 from tkinter import *
 from TilemapEditor import *
-from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 
 class TilemapEditorGui(Frame):
@@ -55,6 +55,7 @@ class TilemapEditorGui(Frame):
         self.filemenu = Menu(self.menubar, tearoff=0)
         self.filemenu.add_command(label="Open Tilemap", command=self.open_tilemap)
         self.filemenu.add_command(label="Save Tilemap", command=self.save_tilemap)
+        self.filemenu.add_command(label="Save as Tilemap", command=self.save_as_tilemap)
         self.filemenu.add_command(label="Close Tilemap", command=self.close_tilemap)
         self.filemenu.add_command(label="Load Tileset")
         self.filemenu.add_command(label="Exit", command=self.master.quit)
@@ -71,6 +72,11 @@ class TilemapEditorGui(Frame):
 
     def save_tilemap(self):
         self.tilemap_editor.save_tilemap()
+
+    def save_as_tilemap(self):
+        f = asksaveasfilename(parent=self.master, filetypes=[('xmlfiles', '*.xml')], title="Save Tilemap as...")
+        self.tilemap_editor.save_tilemap(xml_tilemap=f)
+        print("File saved to: ", f)
 
     def close_tilemap(self):
         self.tilemap_editor.close_tilemap()
@@ -141,7 +147,7 @@ class TilemapEditorGui(Frame):
         self.tilemap_editor.set_selected_layer(int(self.layer_selection.get()))
         self.tilemap_editor.edit_tile(int(event.x/32), int(event.y/32))
         self.draw_tilemap()
-        self.tilemap_editor.save_tilemap("file.xml")
+        #self.tilemap_editor.save_tilemap("file.xml")
         print(int(event.x/32), int(event.y/32))
 
     def onTilesetClick(self, event):

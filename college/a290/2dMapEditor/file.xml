@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?><tilemap height="4" layers="2" width="4"><layer>0 1 2 3 1 0 1 2 2 1 2 0 3 2 3 1 </layer><layer>0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 </layer></tilemap>
+<?xml version="1.0" encoding="utf-8"?><tilemap height="3" layers="2" width="3"><layer>0 0 0 0 2 0 0 0 3 </layer><layer>3 0 3 0 2 0 2 0 3 </layer></tilemap>
