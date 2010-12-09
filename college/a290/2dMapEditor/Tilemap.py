@@ -7,117 +7,130 @@
 import xml.dom.minidom
 
 class Tilemap(object):
-    def __init__(self, height=0, width=0, layers=1, texture_id=0, xml_tilemap=None):
+    def __init__(self, height=3, width=3, layers=1, texture_id=0, xml_tilemap=None):
         """
         Create a Tilemap object. If xml_tilemap is defined all other
         parameters are ignored and the object is created from source xml file.
-        If xml_tilemap=None then all other parameters must exist in order for
-        a Tilemap object to be created.
 
-        height: Height in tiles of Tilemap
-        width:  Width in tiles of Tilemap.
-        layers: Number of layers in TileMap.
-        texture_id: Default texture fill for game map.
-        texturemap: Source xml file.
+        height: height in tiles of Tilemap
+        width:  width in tiles of Tilemap.
+        layers: number of layers in TileMap.
+        texture_id: default texture fill for game map.
+        texturemap: source xml file.
         """
         if xml_tilemap == None:
             self.height = height
             self.width = width
             self.layers = layers
-            self.texture_map = [[texture_id for i in range(height*width)] \
+            self.tile_map = [[tile_id for i in range(height*width)] \
                                 for i in range(layers)]
         else:
-            self.texture_map = list()
+            self.tile_map = list()
             self.parse_from_xml(xml_tilemap)
 
     def get_tile(self, layer, x, y):
-        if x < self.width and x >= 0 and y < self.height and y >= 0 \
-           and layer < self.layers and layer >= 0:
-            return self.texture_map[layer][x*self.width + y]
-        else:
-            return False
+        """
+        Returns the tile id at layer, x, y for this Tilemap.
 
-    def edit_tile(self, layer, texture_id, x, y):
+        layer: tile layer to edit.
+        x: position of tile in the x coordinate
+        y: position of tile in the y coordinate
         """
-        Edit texture_id of tile in self.texture_map at specified
-        x and y coordinates. Returns True if successful.
-        p_layer: Tile layer to edit.
-        p_texture_id: Edit texture_id of tile.
-        """
-        
-        """ If p_layer, p_x, and p_y in range set texture_id. """
-        if x < self.width and x >= 0 and y < self.height and y >= 0 \
+        # If layer, x, y in range set tile_id.
+        if y < self.height and y >= 0 and x < self.width and x >= 0 \
            and layer < self.layers and layer >= 0:
-            self.texture_map[layer][x*self.width + y] = texture_id
+            return self.tile_map[layer][y*self.height + x]
+        else:
+            return -1
+
+    def edit_tile(self, layer, tile_id, x, y):
+        """
+        Edit the tile id at layer, x, y for this Tilemap.
+
+        layer: Tile layer to edit.
+        tile_id: New tile id of the tile at layer, x, y
+        x: position of tile in the x coordinate
+        y: position of tile in the y coordinate
+        """        
+        # If layer, x, y in range set tile_id.
+        if y < self.height and y >= 0 and x < self.width and x >= 0 \
+           and layer < self.layers and layer >= 0:
+            self.tile_map[layer][y*self.height + x] = tile_id
             return True
         else:
             return False
 
-    def parse_from_xml(self, xml_tilemap):
+    def parse_from_xml(self, tilemap_xml):
         """
         Create TileMap object from p_xml_tilemap.
-        p_xml_tilemap: File path of xml file to read from.
-        """
-        
-        f = open(xml_tilemap, "r")
 
-        xml_string = f.read()
-        
+        tilemap_xml: File path of xml file to read from
+
+        Online Documentation:
+        http://docs.python.org/release/3.0.1/library/xml.dom.minidom.html
+        http://docs.python.org/dev/library/xml.dom.html
+        """
+        # Open xml file.
+        f = open(tilemap_xml, "r")
+
+        # Get xml data.
+        xml_string = f.read()        
         dom = xml.dom.minidom.parseString(xml_string)
 
+        # Get data stored in <tilemap> tags.
+        # NOTE: There should only be one of these in the xml source file.
         tilemap_parameters = dom.getElementsByTagName("tilemap")
-
         for t in tilemap_parameters:
             self.layers = int(t.getAttribute("layers"))
             self.height = int(t.getAttribute("height"))
             self.width = int(t.getAttribute("width"))
 
+        # Get data stored in <layer> tags.
         tilemap_layers = dom.getElementsByTagName("layer")
-
         for layer in tilemap_layers:
-            self.texture_map.append( [int(c) for c in layer.childNodes[0].data if c != ' '])
-            
-        f.close()
-            
-        """
-        Documentation:
-        http://docs.python.org/release/3.0.1/library/xml.dom.minidom.html
-        http://docs.python.org/dev/library/xml.dom.html
-        """
-
-    def parse_to_xml(self, xml_tilemap):
-        """
-        Write self to p_xml_tilemap.
-        p_xml_tilemap: File path of xml file to write to.
-        """
+            self.tile_map.append( [int(c) for c in layer.childNodes[0].data if c != ' '])
         
-        """ Create xml Node object. """
+        # Close xml file.
+        f.close()
+
+    def parse_to_xml(self, tilemap_xml):
+        """
+        Write tile id data stored in self.tile_map to tilemap_xml.
+
+        tilemap_xml: File path of xml file to write to
+        """
+        # Create root xml Node object.
         doc = xml.dom.minidom.Document()
 
-        """ Create tilemap element and set attributes. """
-        tile_map = doc.createElement("tilemap")
-        tile_map.setAttribute("height", str(self.height))
-        tile_map.setAttribute("width", str(self.width))
-        tile_map.setAttribute("layers", str(self.layers))
+        # Create tilemap element and set attributes.
+        tilemap = doc.createElement("tilemap")
+        tilemap.setAttribute("height", str(self.height))
+        tilemap.setAttribute("width", str(self.width))
+        tilemap.setAttribute("layers", str(self.layers))
 
-        """ Add tilemap element to xml Node object. """
-        doc.appendChild(tile_map)
+        # Add tilemap element to xml Node object.
+        doc.appendChild(tilemap)
 
-        """ Add layer element(s) to tile_map Node object. """
-        for layer in self.texture_map:
+        # Create layer element(s).
+        for layer in self.tile_map:
             map_layer = doc.createElement("layer")
             layer_string = self.list_to_str(layer)
             tile_representation = doc.createTextNode(layer_string)
 
+            # Add tile_repersentation to map_layer Node object.
             map_layer.appendChild(tile_representation)
-            tile_map.appendChild(map_layer)
+            # Add map_layer to tilemap Node object.
+            tilemap.appendChild(map_layer)
 
-        """ Write xml  to p_xml_tilemap. """
-        f = open(xml_tilemap, "w")
+        # Write xml data to tilemap_xml.
+        f = open(tilemap_xml, "w")
         doc.writexml(f, encoding="utf-8")
         f.close()
 
     def list_to_str(self, layer):
+        """
+        Take a list of tile id's and turn them into a string.
+        """
         result = ""
         for char in layer:
             result += str(char) + " "
