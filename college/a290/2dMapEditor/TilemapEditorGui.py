@@ -6,6 +6,7 @@
 
 from tkinter import *
 from TilemapEditor import *
+from tkinter.filedialog import askopenfilename
 
 
 class TilemapEditorGui(Frame):
@@ -16,17 +17,20 @@ class TilemapEditorGui(Frame):
     
     def __init__(self, master=None):
         Frame.__init__(self)
-        
+
         self.tilemap_editor = TilemapEditor()
-        self.tilemap_editor.open_tilemap("file.xml")
+        #self.tilemap_editor.open_tilemap("file.xml")
         self.tilemap_editor.open_tileset("tile0.gif", 2, 2)
         
         self.pack()
         self.create_widgets()
+        master.config(menu=self.menubar)
         
     def create_widgets(self):
-        # Set up option menu for tile selection. I want to change this
-        # later from numbers to actual images.
+        # Set up menubar
+        self.setup_file_menu()
+        
+        # Set up option menu for tile selection.
         self.setup_tile_selection()
         
         # Set up option menu for layer selection.
@@ -41,24 +45,41 @@ class TilemapEditorGui(Frame):
     ###########################################################################
     # create_widgets helper functions.
     ###########################################################################
-    
-    def setup_tile_selection(self):
-        """
-        Set up option menu for tile selection by key value.
-        """
-        # Create canvas tile_width_pixels, 300
-        self.tileset_display = Canvas(self, height=500, width=self.tilemap_editor.get_tile_width(), bg="pink")
-        self.tileset_display.bind('<Double-1>', self.onTilesetClick)
-        self.draw_tileset()
-        
-        # Create label == "Tile: tile_id"
 
-    def draw_tileset(self):
-        tiles = self.tilemap_editor.get_tileset_values()
-        for i in range(len(tiles)):
-            width = self.tilemap_editor.get_tile_width()
-            self.tileset_display.create_image(0, i*width, anchor=NW, image=tiles[i])
-        
+    def setup_file_menu(self):
+        """
+        TODO:
+        """
+        self.menubar = Menu()
+
+        self.filemenu = Menu(self.menubar, tearoff=0)
+        self.filemenu.add_command(label="Open Tilemap", command=self.open_tilemap)
+        self.filemenu.add_command(label="Save Tilemap", command=self.save_tilemap)
+        self.filemenu.add_command(label="Close Tilemap", command=self.close_tilemap)
+        self.filemenu.add_command(label="Load Tileset")
+        self.filemenu.add_command(label="Exit", command=self.master.quit)
+
+        self.menubar.add_cascade(label="File", menu=self.filemenu)
+
+    def open_tilemap(self):
+        filename = askopenfilename(filetypes=[("xmlfiles", "*.xml")])
+        self.tilemap_editor.open_tilemap(filename)
+        self.change_layer.destroy()
+        self.setup_layer_selection()
+        self.change_layer.pack(anchor=W, side=TOP)
+        self.draw_tilemap()
+
+    def save_tilemap(self):
+        self.tilemap_editor.save_tilemap()
+
+    def close_tilemap(self):
+        self.tilemap_editor.close_tilemap()
+        self.change_layer.destroy()
+        self.setup_layer_selection()
+        self.change_layer.pack(anchor=W, side=TOP)
+        self.tilemap_display.delete(ALL)
+        self.draw_tilemap()
+    
     def setup_layer_selection(self):
         """
         Set up option menu for layer selection.
@@ -67,12 +88,32 @@ class TilemapEditorGui(Frame):
         self.layer_selection = StringVar()
         self.layer_selection.set(editable_layers[0])
         self.change_layer = OptionMenu(self, self.layer_selection, *editable_layers)
+        
+    def setup_tile_selection(self):
+        """
+        Set up option menu for tile selection by key value.
+        """
+        # Create canvas tile_width_pixels, 300
+        self.tileset_display = Canvas(self, height=470, width=self.tilemap_editor.get_tile_width(), bg="pink")
+        self.tileset_display.bind('<Double-1>', self.onTilesetClick)
+        self.draw_tileset()
+        
+        # Create label == "Tile: tile_id"
+        tile_selection = "Tile: " + str(self.tilemap_editor.get_selected_texture_id())
+        self.tileset_label = Label(text=tile_selection)
+
+    def draw_tileset(self):
+        tiles = self.tilemap_editor.get_tileset_values()
+        for i in range(len(tiles)):
+            width = self.tilemap_editor.get_tile_width()
+            self.tileset_display.create_image(0, i*width, anchor=NW, image=tiles[i])
 
     def setup_tilemap_display(self):
         # Create tilemap_display.
         self.tilemap_display = Canvas(self, height=500, width=500, bg="pink")
         # Draw open tilemap.
-        self.draw_tilemap()
+        if self.tilemap_editor.tilemap != None:
+            self.draw_tilemap()
         # Add double-click event handler to canvas.
         self.tilemap_display.bind('<Double-1>', self.onTilemapClick)
 
@@ -83,11 +124,12 @@ class TilemapEditorGui(Frame):
                     self.tilemap_display.create_image(i*32, j*32, anchor=NW, image=self.tilemap_editor.get_tile_photoimage(layer, i, j))
 
     def pack_widgets(self):
-        self.tilemap_display.pack({"side": "left"})
-        self.tileset_display.pack({"side": "left"})
-        self.change_selected_tile.pack({"side": "left"})
-        self.change_layer.pack({"side": "right"})
-
+        self.tilemap_display.pack(anchor=W, side=LEFT)
+        self.tileset_display.pack(anchor=W, side=BOTTOM)
+        self.change_layer.pack(anchor=W, side=TOP)
+        self.tileset_label.pack(anchor=N, side=TOP)
+        
+        
     ###########################################################################
     # Event handlers.
     ###########################################################################
@@ -108,12 +150,14 @@ class TilemapEditorGui(Frame):
         Edits the tile on the selected layer on the clicked tile.
         """
         self.tilemap_editor.set_selected_texture_id(int(event.y/32))
+        tile_selection = "Tile: " + str(self.tilemap_editor.get_selected_texture_id())
+        self.tileset_label["text"] = tile_selection
         print(int(event.y/32))
 
 def main():
     root = Tk()
     app = TilemapEditorGui(master=root)
-    app.master.minsize(800, 500)
+    app.master.minsize(100, 100)
     app.mainloop()
 
 if __name__ == '__main__':

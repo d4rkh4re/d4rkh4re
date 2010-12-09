@@ -7,7 +7,7 @@
 import xml.dom.minidom
 
 class Tilemap(object):
-    def __init__(self, height=3, width=3, layers=1, texture_id=0, xml_tilemap=None):
+    def __init__(self, height=3, width=3, layers=1, tile_id=0, xml_tilemap=None):
         """
         Create a Tilemap object. If xml_tilemap is defined all other
         parameters are ignored and the object is created from source xml file.
@@ -24,9 +24,14 @@ class Tilemap(object):
             self.layers = layers
             self.tile_map = [[tile_id for i in range(height*width)] \
                                 for i in range(layers)]
+            self.xml_tilemap = "default.xml"
         else:
             self.tile_map = list()
             self.parse_from_xml(xml_tilemap)
+            self.xml_tilemap = xml_tilemap
+
+    def get_filename(self): 
+        return self.xml_tilemap
 
     def get_tile(self, layer, x, y):
         """
@@ -93,7 +98,7 @@ class Tilemap(object):
         # Close xml file.
         f.close()
 
-    def parse_to_xml(self, tilemap_xml):
+    def parse_to_xml(self, tilemap_xml=None):
         """
         Write tile id data stored in self.tile_map to tilemap_xml.
 
@@ -123,8 +128,12 @@ class Tilemap(object):
             tilemap.appendChild(map_layer)
 
         # Write xml data to tilemap_xml.
-        f = open(tilemap_xml, "w")
+        if tilemap_xml == None:
+            f = open(self.xml_tilemap, "w")
+        else:
+            f = open(tilemap_xml, "w")
         doc.writexml(f, encoding="utf-8")
+
         f.close()
 
     def list_to_str(self, layer):
