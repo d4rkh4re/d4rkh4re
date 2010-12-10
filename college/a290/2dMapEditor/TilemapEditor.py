@@ -21,6 +21,7 @@ class TilemapEditor(object):
         self.selected_layer = 0
         self.selected_texture_id = 0
         self.tilemap = Tilemap()
+        self.tileset = None
         
     def get_layers(self):
         return self.tilemap.layers
@@ -62,14 +63,19 @@ class TilemapEditor(object):
         """
         Returns a list of all tile values.
         """
-        return self.tileset.get_tileset_values()
-        
+        if self.tileset == None:
+            return list()
+        else:
+            return self.tileset.get_tileset_values()
 
     def get_tile_photoimage(self, layer, x, y):
         """
         Returns the PhotoImage mapped to tile_id.
         """
-        return self.tileset.get_tile(self.tilemap.get_tile(layer, x, y))
+        if self.tileset == None:
+            return PhotoImage()
+        else:
+            return self.tileset.get_tile(self.tilemap.get_tile(layer, x, y))
 
     def get_tilemap_height(self):
         """
@@ -87,15 +93,18 @@ class TilemapEditor(object):
         """
         Returns the width of a tile in pixels.
         """
-        return self.tileset.get_tile_width()
+        if self.tileset == None:
+            return 32
+        else:
+            return self.tileset.get_tile_width()
 
-    def open_tilemap(self, xml_tilemap):
+    def open_tilemap(self, h, w, l, t_id):
         """
         Creates a TileMap object from @xml_tilemap and sets selected_layer to
         zero.
         """
         self.selected_layer = 0
-        self.tilemap = Tilemap(xml_tilemap=xml_tilemap)
+        self.tilemap = Tilemap(height=h, width=w, layers=l, tile_id=t_id)
 
     def save_tilemap(self, xml_tilemap=None):
         """
