@@ -1,7 +1,7 @@
 ###############################################################################
 # TilemapEditorGui.py
-# Jonathan M. Stout
-# <jonstout@indiana.edu>
+# William C. Morris
+# <d4rkh4re@gmail.com>
 ###############################################################################
 # Usage: To use you must load a tileset. To do this go File>Load Tileset. A
 # Tilset has been provided ("tile.gif"). Use width:2 height:2 pixel_width:32
