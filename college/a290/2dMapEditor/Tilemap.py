@@ -44,7 +44,7 @@ class Tilemap(object):
         # If layer, x, y in range set tile_id.
         if y < self.height and y >= 0 and x < self.width and x >= 0 \
            and layer < self.layers and layer >= 0:
-            return self.tile_map[layer][y*self.height + x]
+            return self.tile_map[layer][y*self.width + x]
         else:
             return -1
 
@@ -60,7 +60,7 @@ class Tilemap(object):
         # If layer, x, y in range set tile_id.
         if y < self.height and y >= 0 and x < self.width and x >= 0 \
            and layer < self.layers and layer >= 0:
-            self.tile_map[layer][y*self.height + x] = tile_id
+            self.tile_map[layer][y*self.width + x] = tile_id
             return True
         else:
             return False
