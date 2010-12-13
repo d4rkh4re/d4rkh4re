@@ -10,28 +10,4 @@
 # 
 ################################################################################
 
-terminal_commands = ["help", "about", "exit"]
 
-def terminalOS():
-    """ terminalOS """
-    
-    while True:
-        user_input = input("$termOS: ")
-        execute_command(user_input)
-
-def execute_command(u_command):
-    """ Parses user input and checks to see if a command exists. """
-    
-    if u_command == "help":
-        print("Commands:", terminal_commands)
-    elif u_command == "about":
-        print("Written by William C. Morris <d4rkh4re@gmail.com>")
-    elif u_command == "exit":
-        exit()
-    else:
-        print("'", u_command, "'", "is an unknown command")
-
-################################################################################
-################################################################################
-
-terminalOS()
