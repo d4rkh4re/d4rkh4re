@@ -20,11 +20,11 @@ class TilemapEditor(object):
         """
         self.selected_layer = 0
         self.selected_texture_id = 0
-        self.tilemap = Tilemap()
+        self.open_tilemap()
         self.tileset = None
         
     def get_layers(self):
-        return self.tilemap.layers
+        return self.tilemap.get_layers()
     
     def get_tileset_keys(self):
         return self.tileset.get_tile_keys()
@@ -98,13 +98,13 @@ class TilemapEditor(object):
         else:
             return self.tileset.get_tile_width()
 
-    def open_tilemap(self, h, w, l, t_id):
+    def open_tilemap(self, h=3, w=3, l=1, t_id=0, xml=None):
         """
         Creates a TileMap object from @xml_tilemap and sets selected_layer to
         zero.
         """
         self.selected_layer = 0
-        self.tilemap = Tilemap(height=h, width=w, layers=l, tile_id=t_id)
+        self.tilemap = Tilemap(h, w, l, t_id, xml)
 
     def save_tilemap(self, xml_tilemap=None):
         """
@@ -116,7 +116,7 @@ class TilemapEditor(object):
         """
         Assigns None to tilemap.
         """
-        self.tilemap = Tilemap()
+        self.open_tilemap()
 
     def open_tileset(self, tileset_source, width, height, tile_width=32, tile_height=32):
         """

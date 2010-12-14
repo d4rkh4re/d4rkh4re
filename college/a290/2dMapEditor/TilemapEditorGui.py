@@ -3,14 +3,6 @@
 # William C. Morris
 # <d4rkh4re@gmail.com>
 ###############################################################################
-# Usage: To use you must load a tileset. To do this go File>Load Tileset. A
-# Tilset has been provided ("tile.gif"). Use width:2 height:2 pixel_width:32
-# and pixel_height=32. You will notice a Tilemap has already been created for
-# you by default. It is 3x3 and has 1 layer with a fill value of zero. You can
-# also create a new Tilemap with the dimentions you want with File>New Tileset.
-# If the tilemap fails to change upon double click be sure to have the top
-# layer selected if you created a map with more than 1 layer.
-###############################################################################
 
 from tkinter import *
 from TilemapEditor import *
@@ -118,6 +110,15 @@ class TilemapEditorGui(Frame):
         self.change_layer.destroy()
         self.setup_layer_selection()
         self.change_layer.pack(anchor=W, side=TOP)
+
+            
+    def open_tilemap(self):
+        filename = askopenfilename(filetypes=[("xmlfiles", "*.xml")])
+        self.tilemap_editor.open_tilemap(xml=filename)
+        self.change_layer.destroy()
+        self.setup_layer_selection()
+        self.change_layer.pack(anchor=W, side=TOP)
+        self.draw_tilemap()
         
     def load_tileset(self):
         """
@@ -177,14 +178,6 @@ class TilemapEditorGui(Frame):
         self.change_layer.destroy()
         self.setup_layer_selection()
         self.change_layer.pack(anchor=W, side=TOP)
-        
-    def open_tilemap(self):
-        filename = askopenfilename(filetypes=[("xmlfiles", "*.xml")])
-        self.tilemap_editor.open_tilemap(filename)
-        self.change_layer.destroy()
-        self.setup_layer_selection()
-        self.change_layer.pack(anchor=W, side=TOP)
-        self.draw_tilemap()
 
     def save_tilemap(self):
         self.tilemap_editor.save_tilemap()
@@ -216,7 +209,7 @@ class TilemapEditorGui(Frame):
         Set up option menu for tile selection by key value.
         """
         # Create canvas tile_width_pixels, 300
-        self.tileset_display = Canvas(self, height=470, width=self.tilemap_editor.get_tile_width(), bg="pink")
+        self.tileset_display = Canvas(self, height=470, width=self.tilemap_editor.get_tile_width(), bg="white")
         self.tileset_display.bind('<Double-1>', self.onTilesetClick)
         self.draw_tileset()
         
@@ -232,7 +225,7 @@ class TilemapEditorGui(Frame):
 
     def setup_tilemap_display(self):
         # Create tilemap_display.
-        self.tilemap_display = Canvas(self, height=500, width=500, bg="pink")
+        self.tilemap_display = Canvas(self, height=500, width=500, bg="white")
         # Draw open tilemap.
         if self.tilemap_editor.tilemap != None:
             self.draw_tilemap()
@@ -240,6 +233,7 @@ class TilemapEditorGui(Frame):
         self.tilemap_display.bind('<Double-1>', self.onTilemapClick)
 
     def draw_tilemap(self):
+        self.tilemap_display.delete(ALL)
         for layer in range(self.tilemap_editor.get_layers()):
             for i in range(self.tilemap_editor.get_tilemap_width()):
                 for j in range(self.tilemap_editor.get_tilemap_height()):

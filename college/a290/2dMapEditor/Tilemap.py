@@ -7,7 +7,7 @@
 import xml.dom.minidom
 
 class Tilemap(object):
-    def __init__(self, height=3, width=3, layers=1, tile_id=0, xml_tilemap=None):
+    def __init__(self, height, width, layers, tile_id, xml_tilemap):
         """
         Create a Tilemap object. If xml_tilemap is defined all other
         parameters are ignored and the object is created from source xml file.
@@ -32,6 +32,9 @@ class Tilemap(object):
 
     def get_filename(self): 
         return self.xml_tilemap
+
+    def get_layers(self):
+        return self.layers
 
     def get_tile(self, layer, x, y):
         """
@@ -93,7 +96,8 @@ class Tilemap(object):
         # Get data stored in <layer> tags.
         tilemap_layers = dom.getElementsByTagName("layer")
         for layer in tilemap_layers:
-            self.tile_map.append( [int(c) for c in layer.childNodes[0].data if c != ' '])
+            layer_data = str(layer.childNodes[0].data)
+            self.tile_map.append( [int(c) for c in layer_data.strip().split(" ")] )
         
         # Close xml file.
         f.close()
