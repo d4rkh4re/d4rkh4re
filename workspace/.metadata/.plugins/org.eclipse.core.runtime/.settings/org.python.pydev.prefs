@@ -1,0 +1,9 @@
+#Tue Jan 04 18:02:07 EST 2011
+com.aptana.db.ide-idUUID=5d08e1fc-2e06-4e8f-8823-f811ba9c3372
+eclipse.preferences.version=1
+KEYWORD_COLOR=255,128,0
+CLASS_NAME_COLOR=0,0,255
+FUNC_NAME_COLOR=0,0,255
+INTERPRETER_PATH_NEW=Name\:C\:\\Python31\\python.exe\:EndName\:Version3.1Executable\:C\:\\Python31\\python.exe|C\:\\Program Files\\eclipse\\plugins\\org.python.pydev_1.6.4.2010123115\\PySrc|C\:\\Python31|C\:\\Python31\\DLLs|C\:\\Python31\\lib|C\:\\Python31\\lib\\plat-win|C\:\\Python31\\lib\\site-packages|C\:\\Windows\\system32\\python31.zip@$|Image|OpenGL|__main__|_ast|_bisect|_bytesio|_codecs|_codecs_cn|_codecs_hk|_codecs_iso2022|_codecs_jp|_codecs_kr|_codecs_tw|_collections|_csv|_fileio|_functools|_heapq|_hotshot|_io|_json|_locale|_lsprof|_md5|_multibytecodec|_pickle|_random|_sha|_sha1|_sha256|_sha512|_sre|_struct|_subprocess|_symtable|_thread|_warnings|_weakref|_winreg|array|atexit|audioop|binascii|builtins|cPickle|cStringIO|cmath|datetime|email|errno|exceptions|future_builtins|gc|imageop|imp|itertools|marshal|math|mmap|msvcrt|nt|numpy|operator|os|os.path|parser|signal|socket|strop|sys|thread|time|winreg|wx|wxPython|xxsubtype|zipimport|zlib&&&&&
+DECORATOR_COLOR=128,0,128
+COMMENT_COLOR=255,0,0

@@ -1,0 +1,29 @@
+###############################################################################
+# TilemapEditorGui.py
+# William C. Morris
+# <d4rkh4re@gmail.com>
+###############################################################################
+
+from tkinter import *
+from TilemapEditor import *
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+
+
+class TilemapEditorGui(Frame):
+    """
+    http://docs.python.org/py3k/library/tkinter.html
+    http://infohost.nmt.edu/tcc/help/pubs/tkinter/
+    """
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.pack()
+        self.create_tilemap_display()
+        
+    def create_tilemap_display(self, master=None):
+        self.tmap = Canvas(master)
+        self.tmap.grid_bbox(0, 0, 1, 1)
+
+root = Tk()
+app = TilemapEditorGui(master=root)
+app.master.minsize(100, 100)
+app.mainloop()
