@@ -226,6 +226,7 @@ class TilemapEditorGui(Frame):
     def setup_tilemap_display(self):
         # Create tilemap_display.
         self.tilemap_display = Canvas(self, height=500, width=500, bg="white")
+
         # Draw open tilemap.
         if self.tilemap_editor.tilemap != None:
             self.draw_tilemap()
