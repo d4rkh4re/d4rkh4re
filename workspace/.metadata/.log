@@ -1,0 +1,331 @@
+!SESSION 2011-01-04 01:38:27.380 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-01-04 01:43:29.116
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-01-04 01:43:29.116
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:43:29.116
+!MESSAGE Software being installed: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:43:29.116
+!MESSAGE Missing requirement: Aptana Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates 1.6.4.2010123115) requires 'bundle com.aptana.editor.common 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-01-04 01:43:29.116
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:43:29.116
+!MESSAGE From: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:43:29.116
+!MESSAGE To: org.python.pydev.django_templates [1.6.4.2010123115]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-01-04 01:43:29.123
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-01-04 01:43:29.123
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:43:29.123
+!MESSAGE Software being installed: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:43:29.123
+!MESSAGE Missing requirement: Aptana Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates 1.6.4.2010123115) requires 'bundle com.aptana.editor.common 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-01-04 01:43:29.124
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:43:29.124
+!MESSAGE From: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:43:29.124
+!MESSAGE To: org.python.pydev.django_templates [1.6.4.2010123115]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-01-04 01:46:53.336
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-01-04 01:46:53.336
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:46:53.336
+!MESSAGE Software being installed: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:46:53.336
+!MESSAGE Missing requirement: Aptana Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates 1.6.4.2010123115) requires 'bundle com.aptana.editor.common 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-01-04 01:46:53.336
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:46:53.336
+!MESSAGE From: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:46:53.336
+!MESSAGE To: org.python.pydev.django_templates [1.6.4.2010123115]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-01-04 01:46:53.338
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-01-04 01:46:53.339
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:46:53.339
+!MESSAGE Software being installed: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:46:53.339
+!MESSAGE Missing requirement: Aptana Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates 1.6.4.2010123115) requires 'bundle com.aptana.editor.common 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-01-04 01:46:53.339
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:46:53.339
+!MESSAGE From: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 01:46:53.339
+!MESSAGE To: org.python.pydev.django_templates [1.6.4.2010123115]
+!SESSION 2011-01-04 17:40:50.092 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-01-04 17:42:33.336
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-01-04 17:42:33.336
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 17:42:33.336
+!MESSAGE Software being installed: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 17:42:33.336
+!MESSAGE Missing requirement: Aptana Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates 1.6.4.2010123115) requires 'bundle com.aptana.editor.common 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-01-04 17:42:33.336
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 17:42:33.336
+!MESSAGE From: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 17:42:33.336
+!MESSAGE To: org.python.pydev.django_templates [1.6.4.2010123115]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-01-04 17:42:33.366
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-01-04 17:42:33.366
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 17:42:33.366
+!MESSAGE Software being installed: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-01-04 17:42:33.366
+!MESSAGE Missing requirement: Aptana Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates 1.6.4.2010123115) requires 'bundle com.aptana.editor.common 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-01-04 17:42:33.366
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 17:42:33.366
+!MESSAGE From: PyDev Django Templates Editor 1.6.4.2010123115 (org.python.pydev.django_templates.feature.feature.group 1.6.4.2010123115)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-01-04 17:42:33.366
+!MESSAGE To: org.python.pydev.django_templates [1.6.4.2010123115]
+!SESSION 2011-01-04 17:46:23.654 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 0 2011-01-04 17:47:02.690
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.internal.Workbench.updateActiveWorkbenchWindowMenuManager(Workbench.java:3286)
+	at org.eclipse.ui.internal.Workbench.access$0(Workbench.java:3238)
+	at org.eclipse.ui.internal.Workbench$2.bindingManagerChanged(Workbench.java:3224)
+	at org.eclipse.jface.bindings.BindingManager.fireBindingManagerChanged(BindingManager.java:900)
+	at org.eclipse.jface.bindings.BindingManager.setActiveBindings(BindingManager.java:2176)
+	at org.eclipse.jface.bindings.BindingManager.recomputeBindings(BindingManager.java:1762)
+	at org.eclipse.jface.bindings.BindingManager.getPrefixTable(BindingManager.java:1519)
+	at org.eclipse.jface.bindings.BindingManager.isPartialMatch(BindingManager.java:1604)
+	at org.eclipse.ui.internal.keys.BindingService.isPartialMatch(BindingService.java:215)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.isPartialMatch(WorkbenchKeyboard.java:656)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:779)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1253)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:3693)
+	at org.eclipse.swt.widgets.Control.translateTraversal(Control.java:3675)
+	at org.eclipse.swt.widgets.Composite.translateTraversal(Composite.java:1218)
+	at org.eclipse.swt.widgets.Display.translateTraversal(Display.java:4691)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1267)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3653)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2548)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+!SESSION 2011-01-04 17:47:39.999 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jface 2 0 2011-01-04 17:47:52.253
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-01-04 17:47:52.253
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench,Python Show Class Browser,
+		Show Class Browser,
+		Category(org.python.pydev.ui.category.source,Pydev - Editor,Pydev editor category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.python.pydev 4 4 2011-01-04 17:50:12.810
+!MESSAGE java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+!STACK 0
+java.lang.RuntimeException: java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+	at org.python.pydev.runners.SimpleRunner.run(SimpleRunner.java:356)
+	at org.python.pydev.runners.SimpleRunner.runAndGetOutput(SimpleRunner.java:372)
+	at org.python.pydev.runners.SimplePythonRunner.runAndGetOutputWithInterpreter(SimplePythonRunner.java:88)
+	at org.python.pydev.ui.interpreters.PythonInterpreterManager.doCreateInterpreterInfo(PythonInterpreterManager.java:60)
+	at org.python.pydev.ui.interpreters.PythonInterpreterManager.internalCreateInterpreterInfo(PythonInterpreterManager.java:42)
+	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.createInterpreterInfo(AbstractInterpreterManager.java:219)
+	at org.python.pydev.ui.pythonpathconf.ObtainInterpreterInfoOperation.run(ObtainInterpreterInfoOperation.java:75)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(Unknown Source)
+	at java.lang.Runtime.exec(Unknown Source)
+	at org.python.pydev.runners.SimpleRunner.createProcess(SimpleRunner.java:42)
+	at org.python.pydev.runners.SimpleRunner.run(SimpleRunner.java:354)
+	... 7 more
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.lang.ProcessImpl.start(Unknown Source)
+	... 11 more
+
+!ENTRY org.python.pydev 4 4 2011-01-04 17:50:22.393
+!MESSAGE java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+!STACK 0
+java.lang.RuntimeException: java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+	at org.python.pydev.runners.SimpleRunner.run(SimpleRunner.java:356)
+	at org.python.pydev.runners.SimpleRunner.runAndGetOutput(SimpleRunner.java:372)
+	at org.python.pydev.runners.SimplePythonRunner.runAndGetOutputWithInterpreter(SimplePythonRunner.java:88)
+	at org.python.pydev.ui.interpreters.PythonInterpreterManager.doCreateInterpreterInfo(PythonInterpreterManager.java:60)
+	at org.python.pydev.ui.interpreters.PythonInterpreterManager.internalCreateInterpreterInfo(PythonInterpreterManager.java:42)
+	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.createInterpreterInfo(AbstractInterpreterManager.java:219)
+	at org.python.pydev.ui.pythonpathconf.ObtainInterpreterInfoOperation.run(ObtainInterpreterInfoOperation.java:75)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(Unknown Source)
+	at java.lang.Runtime.exec(Unknown Source)
+	at org.python.pydev.runners.SimpleRunner.createProcess(SimpleRunner.java:42)
+	at org.python.pydev.runners.SimpleRunner.run(SimpleRunner.java:354)
+	... 7 more
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.lang.ProcessImpl.start(Unknown Source)
+	... 11 more
+
+!ENTRY org.python.pydev 1 1 2011-01-04 17:50:22.395
+!MESSAGE Information about process of adding new interpreter:
+- Chosen interpreter (name and file):'Tuple [python -- python]
+- Ok, file is non-null. Getting info on:python
+- Beggining task:Getting libs totalWork:100
+- Setting task name:Mounting executable string...
+- Setting task name:Executing:  python -u "C:\Program Files\eclipse\plugins\org.python.pydev_1.6.4.2010123115\PySrc\interpreterInfo.py"
+- Setting task name:Making pythonpath environment... python -u "C:\Program Files\eclipse\plugins\org.python.pydev_1.6.4.2010123115\PySrc\interpreterInfo.py"
+- Setting task name:Making exec... python -u "C:\Program Files\eclipse\plugins\org.python.pydev_1.6.4.2010123115\PySrc\interpreterInfo.py"
+Exception detected: java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+- Some error happened while getting info on the interpreter:
+java.lang.RuntimeException: java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+	at org.python.pydev.runners.SimpleRunner.run(SimpleRunner.java:356)
+	at org.python.pydev.runners.SimpleRunner.runAndGetOutput(SimpleRunner.java:372)
+	at org.python.pydev.runners.SimplePythonRunner.runAndGetOutputWithInterpreter(SimplePythonRunner.java:88)
+	at org.python.pydev.ui.interpreters.PythonInterpreterManager.doCreateInterpreterInfo(PythonInterpreterManager.java:60)
+	at org.python.pydev.ui.interpreters.PythonInterpreterManager.internalCreateInterpreterInfo(PythonInterpreterManager.java:42)
+	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.createInterpreterInfo(AbstractInterpreterManager.java:219)
+	at org.python.pydev.ui.pythonpathconf.ObtainInterpreterInfoOperation.run(ObtainInterpreterInfoOperation.java:75)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: java.io.IOException: Cannot run program "python": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(Unknown Source)
+	at java.lang.Runtime.exec(Unknown Source)
+	at org.python.pydev.runners.SimpleRunner.createProcess(SimpleRunner.java:42)
+	at org.python.pydev.runners.SimpleRunner.run(SimpleRunner.java:354)
+	... 7 more
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.lang.ProcessImpl.start(Unknown Source)
+	... 11 more
+
+
+!ENTRY org.python.pydev 1 1 2011-01-04 17:54:21.873
+!MESSAGE Information about process of adding new interpreter:
+- Opening dialog to request executable (or jar).
+- Chosen interpreter (name and file):'Tuple [C:\Python31\python.exe -- C:\Python31\python.exe]
+- Ok, file is non-null. Getting info on:C:\Python31\python.exe
+- Beggining task:Getting libs totalWork:100
+- Setting task name:Mounting executable string...
+- Setting task name:Executing:  C:\Python31\python.exe -u "C:\Program Files\eclipse\plugins\org.python.pydev_1.6.4.2010123115\PySrc\interpreterInfo.py"
+- Setting task name:Making pythonpath environment... C:\Python31\python.exe -u "C:\Program Files\eclipse\plugins\org.python.pydev_1.6.4.2010123115\PySrc\interpreterInfo.py"
+- Setting task name:Making exec... C:\Python31\python.exe -u "C:\Program Files\eclipse\plugins\org.python.pydev_1.6.4.2010123115\PySrc\interpreterInfo.py"
+- Setting task name:Reading output...
+- Setting task name:Waiting for process to finish.
+- Success getting the info. Result:Name:C:\Python31\python.exe:EndName:Version3.1Executable:C:\Python31\python.exe|C:\Program Files\eclipse\plugins\org.python.pydev_1.6.4.2010123115\PySrc|C:\Python31|C:\Python31\DLLs|C:\Python31\lib|C:\Python31\lib\plat-win|C:\Python31\lib\site-packages|C:\Windows\system32\python31.zip@$|Image|OpenGL|__main__|_ast|_bisect|_bytesio|_codecs|_codecs_cn|_codecs_hk|_codecs_iso2022|_codecs_jp|_codecs_kr|_codecs_tw|_collections|_csv|_fileio|_functools|_heapq|_hotshot|_io|_json|_locale|_lsprof|_md5|_multibytecodec|_pickle|_random|_sha|_sha1|_sha256|_sha512|_sre|_struct|_subprocess|_symtable|_thread|_warnings|_weakref|_winreg|array|atexit|audioop|binascii|builtins|cPickle|cStringIO|cmath|datetime|email|errno|exceptions|future_builtins|gc|imageop|imp|itertools|marshal|math|mmap|msvcrt|nt|numpy|operator|os|os.path|parser|signal|socket|strop|sys|thread|time|winreg|wx|wxPython|xxsubtype|zipimport|zlib
+
+
+!ENTRY org.python.pydev 1 1 2011-01-04 17:54:45.114
+!MESSAGE java.io.FileNotFoundException: C:\Users\User\Desktop\d4rkh4re\workspace\.metadata\.plugins\org.python.pydev\QzpcUHl0aG9uMzFccHl0aG9uLmV4ZQ== (The system cannot find the file specified)
+!STACK 0
+java.lang.RuntimeException: java.io.FileNotFoundException: C:\Users\User\Desktop\d4rkh4re\workspace\.metadata\.plugins\org.python.pydev\QzpcUHl0aG9uMzFccHl0aG9uLmV4ZQ== (The system cannot find the file specified)
+	at org.python.pydev.plugin.PydevPlugin.readFromWorkspaceMetadata(PydevPlugin.java:627)
+	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.getInterpretersFromPersistedString(AbstractInterpreterManager.java:352)
+	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.getInterpreterInfos(AbstractInterpreterManager.java:161)
+	at org.python.pydev.ui.pythonpathconf.AbstractInterpreterPreferencesPage.doRestore(AbstractInterpreterPreferencesPage.java:196)
+	at org.python.pydev.ui.pythonpathconf.AbstractInterpreterPreferencesPage$3.run(AbstractInterpreterPreferencesPage.java:260)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: java.io.FileNotFoundException: C:\Users\User\Desktop\d4rkh4re\workspace\.metadata\.plugins\org.python.pydev\QzpcUHl0aG9uMzFccHl0aG9uLmV4ZQ== (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.python.pydev.plugin.PydevPlugin.readFromWorkspaceMetadata(PydevPlugin.java:625)
+	... 5 more
+
+!ENTRY org.python.pydev 1 1 2011-01-04 17:56:11.554
+!MESSAGE Did not expect adapter request: interface org.eclipse.debug.ui.actions.IToggleBreakpointsTarget
+
+!ENTRY org.python.pydev 1 1 2011-01-04 17:56:11.577
+!MESSAGE Did not expect adapter request: interface org.eclipse.ui.views.tasklist.ITaskListResourceAdapter
+!SESSION 2011-01-04 19:56:48.918 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jface 2 0 2011-01-04 19:57:11.144
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-01-04 19:57:11.144
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench,Python Show Class Browser,
+		Show Class Browser,
+		Category(org.python.pydev.ui.category.source,Pydev - Editor,Pydev editor category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)

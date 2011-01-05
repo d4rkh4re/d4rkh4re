@@ -1,0 +1,40 @@
+###############################################################################
+# TilemapEditorGui.py
+# William C. Morris
+# <d4rkh4re@gmail.com>
+###############################################################################
+
+from tkinter import *
+from TilemapEditor import *
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+
+
+class TilemapEditorGui(Frame):
+    """
+    http://docs.python.org/py3k/library/tkinter.html
+    http://infohost.nmt.edu/tcc/help/pubs/tkinter/
+    """
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.grid()
+        self.create_tilemap_display()
+        
+    def create_tilemap_display(self, master=None):
+        # Scroll bars
+        x_scroll = Scrollbar(master)
+        
+        y_scroll = Scrollbar(master)
+        
+        # Canvas
+        self.tilemap_display = Canvas(master, bg="pink", xscrollcommand=x_scroll.set, yscrollcommand=y_scroll.set)
+        self.tilemap_display.grid(column=0, row=0)
+        
+        x_scroll.config(command=self.tilemap_display.xview)
+        y_scroll.config(command=self.tilemap_display.yview)
+        x_scroll.grid(column=0, row=1)
+        y_scroll.grid(column=1, row=0)
+
+root = Tk()
+app = TilemapEditorGui(master=root)
+app.master.minsize(100, 100)
+app.mainloop()

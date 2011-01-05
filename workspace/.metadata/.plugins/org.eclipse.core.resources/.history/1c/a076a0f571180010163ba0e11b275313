@@ -1,0 +1,63 @@
+###############################################################################
+# TilemapEditorGui.py
+# William C. Morris
+# <d4rkh4re@gmail.com>
+###############################################################################
+
+from tkinter import *
+from TilemapEditor import *
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+
+
+class TilemapEditorGui(Frame):
+    """
+    http://docs.python.org/py3k/library/tkinter.html
+    http://infohost.nmt.edu/tcc/help/pubs/tkinter/
+    """
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.grid()
+        self.create_tilemap_display(master)
+        self.create_tileset_display(master)
+        
+    def create_tilemap_display(self, master=None):
+        # Scroll bars
+        x_scroll = Scrollbar(master, orient=HORIZONTAL)
+        y_scroll = Scrollbar(master)
+        
+        # Canvas
+        self.tilemap_display = Canvas(master, bg="pink", \
+                                      xscrollcommand=x_scroll.set, \
+                                      yscrollcommand=y_scroll.set, \
+                                      scrollregion=(0,0,1000,1000))
+        
+        # Link scroll bars and canvas
+        x_scroll.config(command=self.tilemap_display.xview)
+        y_scroll.config(command=self.tilemap_display.yview)
+        
+        # Widget placement
+        x_scroll.grid(column=0, row=1, sticky=W+E)
+        y_scroll.grid(column=1, row=0, sticky=N+S)
+        self.tilemap_display.grid(column=0, row=0)
+        
+    def create_tileset_display(self, master=None):
+        # Scroll bars
+        y_scroll = Scrollbar(master)
+        
+        # Canvas
+        self.tileset_display = Canvas(master, bg="pink", \
+                                      yscrollcommand=y_scroll.set, \
+                                      scrollregion=(0,0,1000,1000), \
+                                      width=32, height=250)
+        
+        # Link scroll bars and canvas
+        y_scroll.config(command=self.tilemap_display.yview)
+        
+        # Widget placement
+        y_scroll.grid(column=3, row=0, sticky=N+S)
+        self.tileset_display.grid(column=2, row=0)
+
+root = Tk()
+app = TilemapEditorGui(master=root)
+app.master.minsize(100, 100)
+app.mainloop()
